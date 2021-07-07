@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " ff",
+    " sf",
+    "s  "
+  ],
+  "key": {
+    "f": {
+      "item": "tridentrevisionreforged:elder_fragment"
+    },
+    "s": {
+      "item": "minecraft:prismarine_shard"
+    }
+  },
+  "result": {
+    "item": "minecraft:trident"
+  }
+}

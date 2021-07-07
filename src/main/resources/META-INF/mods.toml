@@ -1,0 +1,25 @@
+modLoader="javafml"
+loaderVersion="[36,)"
+license="MIT"
+[[mods]]
+modId="tridentrevisionreforged"
+version="v1.0"
+displayName="Trident Revision [Reforged] 1.16.5"
+logoFile="examplemod.png"
+credits="Thanks for this mod goes to the fabric version made by Zoey"
+authors="zKryle"
+description='''
+A mod that adds another way of getting a trident fitting vanilla style.
+'''
+[[dependencies.examplemod]]
+    modId="forge"
+    mandatory=true
+    versionRange="[36,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.examplemod]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.5,1.17)"
+    ordering="NONE"
+    side="BOTH"
