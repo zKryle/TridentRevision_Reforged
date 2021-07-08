@@ -12,7 +12,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = 'v1.0'
+version = 'v1.1'
 group = 'com.zkryle.tridentrevisionreforged' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'Trident Revision [Reforged] 1.16.5'
 
