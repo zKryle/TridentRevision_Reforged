@@ -1,5 +1,6 @@
 package com.zkryle.tridentrevisionreforged;
 
+import com.zkryle.tridentrevisionreforged.events.ModEvents;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -21,6 +22,7 @@ public class TridentRevisionReforged{
 
         ITEMS.register( bus );
 
+        MinecraftForge.EVENT_BUS.register(new ModEvents());
         MinecraftForge.EVENT_BUS.register(this);
     }
 }
