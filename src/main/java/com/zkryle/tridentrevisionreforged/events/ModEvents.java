@@ -1,5 +1,6 @@
 package com.zkryle.tridentrevisionreforged.events;
 
+import com.zkryle.tridentrevisionreforged.config.Config;
 import com.zkryle.tridentrevisionreforged.items.ItemInit;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -21,20 +22,22 @@ public class ModEvents{
 
     @SubscribeEvent
     public void onAnvilUpdated( AnvilUpdateEvent event){
-        if (event.getLeft().getItem() == Items.TRIDENT && event.getLeft().isDamaged() && event.getRight().getItem() == ItemInit.ELDER_FRAGMENT.get()){
-            ItemStack stack = event.getLeft().copy();
-            int additionalcost = getEnchantmentCost( stack );
-            if (event.getLeft().getDamageValue() > 0 && event.getLeft().getDamageValue() <= 30){
-                event.setCost( 2 + additionalcost );
-            } else if (event.getLeft().getDamageValue() >= 30 && event.getLeft().getDamageValue() <= 100){
-                event.setCost( 5 + additionalcost);
-            } else if (event.getLeft().getDamageValue() >= 100 && event.getLeft().getDamageValue() <= 200){
-                event.setCost( 7 + additionalcost);
-            } else if (event.getLeft().getDamageValue() >= 200){
-                event.setCost( 10 + additionalcost);
+        if(Config.repair_recipe.get()){
+            if(event.getLeft().getItem() == Items.TRIDENT && event.getLeft().isDamaged() && event.getRight().getItem() == ItemInit.ELDER_FRAGMENT.get()){
+                ItemStack stack = event.getLeft().copy();
+                int additionalcost = getEnchantmentCost( stack );
+                if(event.getLeft().getDamageValue() > 0 && event.getLeft().getDamageValue() <= 30){
+                    event.setCost( 2 + additionalcost );
+                }else if(event.getLeft().getDamageValue() >= 30 && event.getLeft().getDamageValue() <= 100){
+                    event.setCost( 5 + additionalcost );
+                }else if(event.getLeft().getDamageValue() >= 100 && event.getLeft().getDamageValue() <= 200){
+                    event.setCost( 7 + additionalcost );
+                }else if(event.getLeft().getDamageValue() >= 200){
+                    event.setCost( 10 + additionalcost );
+                }
+                stack.setDamageValue( event.getLeft().getDamageValue() - 85 );
+                event.setOutput( stack );
             }
-            stack.setDamageValue(  event.getLeft().getDamageValue() - 85 );
-            event.setOutput( stack );
         }
     }
 }
