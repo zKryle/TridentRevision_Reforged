@@ -2,21 +2,17 @@ package com.zkryle.tridentrevisionreforged.events;
 
 import com.zkryle.tridentrevisionreforged.config.Config;
 import com.zkryle.tridentrevisionreforged.items.ItemInit;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.nbt.ListNBT;
-import net.minecraftforge.common.util.Constants;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraftforge.event.AnvilUpdateEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-
-import java.util.List;
 
 public class ModEvents{
 
 
     // Trident Repairing Recipe
 
-    private int getEnchantmentCost(ItemStack stack){
+    private int getEnchantmentCost( ItemStack stack){
         return stack.getEnchantmentTags().size()*2;
     }
 
